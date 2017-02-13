@@ -1,0 +1,38 @@
+{
+  "name": "cis",
+  "version": "1.0.0",
+  "description": "Customer Information System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorrafols009/CIS.git"
+  },
+  "keywords": [
+    "webapp",
+    "customer",
+    "internal"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorrafols009/CIS/issues"
+  },
+  "homepage": "https://github.com/victorrafols009/CIS#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "ejs": "^2.5.5",
+    "errorhandler": "^1.5.0",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "method-override": "^2.3.7",
+    "morgan": "^1.7.0",
+    "mysql": "^2.12.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
