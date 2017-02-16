@@ -6,6 +6,8 @@ var cfenv = require('cfenv');
 
 var index = require('./routes/index'),
     client = require('./routes/client'),
+    project = require('./routes/project'),
+    profile = require('./routes/profile'),
     login = require('./routes/login'),
     logout = require('./routes/logout');
 
@@ -42,6 +44,8 @@ if('development' == app.get('env')) {
 
 app.use('/', index);
 app.use('/client', client);
+app.use('/project', project);
+app.use('/profile', profile);
 app.use('/login', login);
 app.use('/logout', logout);
 

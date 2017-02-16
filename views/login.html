@@ -1,1 +1,111 @@
-Log In
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/dist/css/AdminLTE.min.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/ionicons.min.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/aos.css"/>
+        <link rel="stylesheet" href="assets/css/_easing.scss"/>
+        <link rel="stylesheet" href="assets/css/bg style.css"/>
+
+        <script src="assets/bootstrap/js/jquery.js"></script>	
+        <script src="assets/bootstrap/js/bootstrap.js"></script>
+        <script src="assets/js/Saitojs.js"></script>
+        <script src="assets/css/aos.css"></script>
+        <script src="assets/js/jquery.smooth-scroll.min.js"></script>
+        <script src="assets/js/jquery.ba-bbq.js"></script>
+
+        <title>CIS | Customer Information System</title>
+    </head>
+
+    <body class="default-bg">
+        <div class="image">
+            <img src="assets/icons/CIS.png" style="height:35px; margin:25px;">
+        </div>
+        <div class="container col-md-12">
+            <div class="container col-md-4 col-md-offset-4" style="box-shadow:5px 5px 5px 5px rgba(10, 10, 10, 0.1); margin-top:120px">
+                <div class="col-md-12 text-black">
+                    <div class="col-md-12">
+                        <h3 class="box-header" style="text-align:center; margin:0; color:#04327f; font-size:20px; margin-bottom:-20px;">
+                            <b>C</b>ustomer <b style="color:#e4832c;">I</b>nformation <b>S</b>ystem
+                            <div class="divider"></div>
+                        </h3>
+                        <form onsubmit="return false;">
+                            <div id="login-failed" style="font-size:18px; font-weight:bold; color:red; text-align:center; padding:20px; margin-top:-30px; display:none;">
+                                Username or password is incorrect.
+                            </div>
+                            <div>
+                                <input type="text" id="username" name="username" placeholder="Username" required/></input>
+                                <div class="bar"></div>
+                            </div>
+                            <div>
+                                <input type="password" id="password" name="password" placeholder="Password" required/>
+                                <div class="bar"></div>
+                            </div>
+                            <div>
+                                <button class="center-block" type="submit" id="login-button">Login</button>
+                                <div id="login-loading" style="color:#04327f; font-size:32px; text-align:center;">
+                                    <div class="overlay"><i class="fa fa-refresh fa-spin"></i></div>
+                                </div>
+                            </div>
+                            </form>                  
+                    </div>
+                </div>
+            </div>
+            <ul class="bg-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="login.js"></script>
+        <script src="assets/aos-master/aos-master/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                easing: 'ease-in-out-sine'
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $(document).on('click', 'a[href*="#"]', function() {
+                    var slashedHash = '#/' + this.hash.slice(1);
+                    if ( this.hash ) {
+                        if ( slashedHash === location.hash ) {
+                            $.smoothScroll({scrollTarget: this.hash});
+                        } else {
+                            $.bbq.pushState(slashedHash);
+                        }
+                        return false;
+                    }
+                });
+                $(window).bind('hashchange', function(event) {
+                    var tgt = location.hash.replace(/^#\/?/,'');
+                    if ( document.getElementById(tgt) ) {
+                        $.smoothScroll({scrollTarget: '#' + tgt});
+                    }
+                });
+                $(window).trigger('hashchange');
+            });
+        </script>
+        <script>
+        $('.toggle').on('click', function() {
+            $('.button-container').stop().addClass('active');
+        });
+        </script>
+    </body>
+</html>

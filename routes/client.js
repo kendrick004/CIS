@@ -2,6 +2,22 @@ var express = require('express');
 var router = express.Router();
 var client = require('../models/client');
 
+router.get('/', function(request, response, next) {
+    if(request.session.login) {
+        //add get clients
+                var data = {
+                    page: {
+                        title: "CIS | Client",
+                        name: "Client"
+                    },
+                    user: request.session.login,
+                };
+                response.render('client.html', data);
+    } else {
+        response.redirect('login');
+    }
+});
+
 router.post('/search', function(request, response, next) {
     client.searchClient(request.body.keyword, function(result) {
         if(result.result.status == 1) {

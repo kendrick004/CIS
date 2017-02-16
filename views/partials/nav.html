@@ -1,0 +1,26 @@
+<!-- Sidebar -->
+<div id="sidebar-wrapper" class="" style=" background-color:#fdfffc;  border-right: solid #4869a1 ; overflow:hidden;">
+    <ul class="sidebar-nav">
+        <div class="container" style="border-bottom: thin solid #04327f; margin-top:5px;">
+            <a href="/" style=" padding-bottom:25px;">
+                <img src="assets/icons/CIS.png" style="height:80px; width:auto; margin-bottom:10px; margin-top:10px;"/>
+            </a>
+        </div>
+        <a href="#" style="display:block; background-color:#ddf0fc; color:#04327f; padding:10px;">Hi, <%= user.name %>!</a>
+        <li>
+            <a href="project"<% if(page.name == "Project") { %> class="active-sidebar"<% } %>><span class="fa fa-tasks" style="margin-left:-20px"></span> &nbsp; Projects</a>
+        </li>
+        <% if(user.role == 1) { %>
+            <li>
+                <a href="client"<% if(page.name == "Client") { %> class="active-sidebar"<% } %>><span class="fa fa-group" style="margin-left:-20px"></span> &nbsp; Clients</a>
+            </li>
+        <% } %>
+        <li>
+            <a href="profile"<% if(page.name == "Profile") { %> class="active-sidebar"<% } %>><span class="fa fa-user" style="margin-left:-20px"></span> &nbsp; Profile</a>
+        </li>
+        <li>
+            <a href="#logout" accesskey="q" data-toggle="modal"><span class="fa fa-sign-out" style="margin-left:-20px"></span> &nbsp; Logout</a>
+        </li>
+    </ul>
+</div>
+<!-- /SIDEBAR -->
