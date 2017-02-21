@@ -30,76 +30,10 @@
         <div id="wrapper">
             <% include ../views/partials/nav.html %>
 
-            <div class="container">
-                <div class="container">
-                    <div class="box col-md-12" style="border-top-color:#2589bd;top:60px; width:70%; left:330px; position:absolute; background-color:rgba(124,122,122,0.7)">
-                        <h3  class="box-header" style="margin: 20px 20px 20px 30px; color:#010101; font-weight:300"> Account Info </h3>
-                        <div class="col-md-12">
-                            <div class="form-group col-md-12" style="margin-left:75px;">
-                                <div class="col-md-8">
-                                    <div class="input-group">
-                                        <input type="hidden" id="id" name="id" value="<%= user.id %>"/>
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-pencil-square-o"></i></span>
-                                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" value="<%= user.name %>"></input>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-12" style="margin-left:75px;">
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-group"></i></span>
-                                        <input class="form-control" id="position" name="position" placeholder="Position" type="text" value="<%= user.position %>"></input>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-building"></i></span>
-                                        <input class="form-control" id="department" name="department" placeholder="Department" type="text" value="<%= user.department %>"></input>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-12" style="margin-left:75px;">
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                        <input class="form-control" id="username" name="username" placeholder="Username" type="text" value="<%= user.username %>"></input>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>
-                                        <input class="form-control" id="password" name="password" placeholder="Password" type="password" value=""></input>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-12" style="margin-left:75px; margin-bottom:30px;">
-                                <div class="col-md-8">
-                                        <a class="btn btn-block btn-social bg-purple" title="User Role">
-                                            <i class="fa fa-fw fa-object-group"></i> <%= user.role_name %>
-                                        </a>
-                                </div>
-                            </div> 
-                            <div class="form-group col-md-12" style="margin-left:75px;">
-                                <div class="col-md-4">
-                                    <button class="btn btn-success" id="save-profile">
-                                        Save Changes
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                   
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="container dp-size" style="position:absolute;left:255px; top:130px; padding:0">
-                    <img src="assets/icons/user_image.png"/>
-                </div>
-            </div>
         </div>
 
         <% include ../views/partials/logout_modal.html %>
         <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
 	    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
-	    <script type="text/javascript" src="profile.js"></script>
     </body>
 </html>
