@@ -14,15 +14,6 @@
         <link rel="stylesheet" href="assets/css/freebie-footer-templates/css/footer-distributed.css"/>
         <link rel="stylesheet" href="assets/bootstrap-select-master/bootstrap-select-master/dist/css/bootstrap-select.css"/>
 
-        <script src="assets/bootstrap/js/jquery.js"></script>	
-        <script src="assets/bootstrap/js/bootstrap.js"></script>
-        <script src="assets/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.js"></script>
-        <script src="assets/css/aos.css"></script>
-        <script src="assets/js/jquery.easing.1.3.js"></script>
-        <script src="assets/js/ckeditor/ckeditor.js"></script>
-        <script src="assets/js/ckeditor/config.js"></script>
-        <script src="assets/js/ckeditor/samples/js/sample.js"></script>
-
         <title><%= page.title %></title>
     </head>
 
@@ -30,10 +21,89 @@
         <div id="wrapper">
             <% include ../views/partials/nav.html %>
 
+            <div class="wrapper col-md-11 col-xs-11 col-sm-11 col-lg-11 col-sm-offset-1 col-xs-offset-3 col-md-offset-0" style="background-color:rgba(124,122,122,0.7);margin-top:30px; padding:0;border-radius:5px; max-height:70%">
+                <div class="box-header">
+                    <h3 style="color:#fff">List of Projects from *Client here*</h3>
+                    <button data-target="#add-client" data-toggle="modal" class="btn bg-teal pull-right">
+                        <span class="fa fa-plus"></span>&nbsp;&nbsp; Add Projects
+                    </button>
+                    <select class="selectpicker" data-live-search="true">
+                        <option class="hidden">Search a Project</option>
+                        <option data-tokens="project x">Project X</option>
+                        <option data-tokens="project y">project y</option>
+                        <option data-tokens="sica panget">sica panget</option>
+                    </select>
+                    <div class="divider"></div>
+                </div>
+                <ul id="style-2" style="padding:0;top:0;max-height:480px; overflow-y:auto;">
+                    <% for(var i=0; i < project.rows.length; i++) { %>
+                        <li class="opportunities col-xs-7 col-sm-7 col-md-4 col-lg-4" style="float:left; margin-bottom:25px;">
+                            <div class="box box-green box-header col-xs-7 col-sm-7 col-md-3 col-lg-3" style="background-color:#fdfffc; margin:0; margin-top:25px;float:left;height:195px;" > 
+                                <button class="btn-sm btn-circle btn bg-red pull-right">
+                                    <span class="fa fa-trash-o"></span>
+                                </button>
+                                <button data-toggle="modal" data-target="#edit-client" class="btn-sm btn-circle btn bg-blue pull-left">
+                                    <span class="fa fa-pencil-square-o"></span>
+                                </button>
+                                <br/><br/>
+                                <div>
+                                    <div class="divider"></div>
+                                    <div class="">
+                                        <h1 id="style-2" style="cursor:pointer;overflow-x:auto; overflow-y:hidden;white-space:nowrap"><b><%= project.rows[i].name %></b></h1>
+                                    </div>
+                                    <div class="box-footer">
+                                        <p class="pull-right"><b>3</b> &nbsp; Months</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li><!--Cards-->
+                    <% } %>
+                </ul>
+            </div>
         </div>
 
         <% include ../views/partials/logout_modal.html %>
         <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
-	    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.js"></script>
+        <script src="assets/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.js"></script>
+        <script src="assets/css/aos.css"></script>
+        <script src="assets/js/jquery.easing.1.3.js"></script>
+        <script src="assets/js/ckeditor/ckeditor.js"></script>
+        <script src="assets/js/ckeditor/config.js"></script>
+        <script src="assets/js/ckeditor/samples/js/sample.js"></script>
+        <script>
+            $('[data-toggle="sidebar"]').click(function(e) {
+                var target = $(this).attr('data-target');
+                $(target).toggleClass('show');
+            });
+        </script>
+        <!-- ANIMATION ON SCROLL JAVA SCRIPT-->
+        <script src="assets/aos-master/aos-master/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                easing: 'ease-in-out-sine'
+            });
+        </script>
+        <script>
+            initSample();
+        </script>
+        <!-- BUTTON CONTAINER JAVA SCRIPT-->
+        <script>
+            $('.toggle').on('click', function() {
+                $('.button-container').stop().addClass('active');
+            });
+        </script>
+        <!--horizontal scroll js-->		
+        <script type="text/javascript">
+            $(function() {
+                $('ul li button').bind('click',function(event){
+                    var $anchor = $(this);
+                    $('div.cards').stop().animate({
+                        scrollLeft: $($anchor.attr('href')).offset().left
+                    }, 2500,'easeOutExpo');
+                    event.preventDefault();
+                });
+            });
+        </script>
     </body>
 </html>

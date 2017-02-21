@@ -1,0 +1,55 @@
+<div id="client-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog  animated bounceIn" style="width:30%; margin-top:150px;">
+        <div class="modal-content">
+            <div class="modal-header bg-aqua">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title">
+                    <input id="client_id" type="hidden"/>
+                    <input id="client_name" size="" maxlength="50" type="text" placeholder="Company Name . . . " style=" font-size:25px;z-index:1;cursor:pointer;border:hidden; background-color:transparent; outline:none; width:100%;"></input>
+                </h5>
+            </div>
+            <div id="style-2" class="modal-body">
+                <div class="row">
+                    <div class="form-group col-md-12 " id="industry">
+                        <label for="industry" class="control-label col-md-3" style="margin-top:3px;">
+                            Type
+                        </label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-fw fa-building"></i></span>
+                                <select id="client_type" name="company.id" class="form-control select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                    <option class="hidden" value="">Type of Company</option>
+                                    <option value="Private">Private</option>
+                                    <option value="Public">Public</option>
+                                    <option value="Corporation">Corporation</option>
+                                    <option value="Incorporation">Incorporation</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="margin-bottom:15px;">
+                        <label for="address" class="control-label col-md-3" style="margin-top:3px;">
+                            Address
+                        </label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-fw fa-map-marker"></i></span>
+                                <input type="text" id="client_address" class="form-control" tabindex="-1"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer bg-gray-light">
+                <div class="pull-right">
+                    <button class="btn bg-gray" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button class="btn bg-blue" id="save-client">
+                        Save
+                    </button>
+                </div>    
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

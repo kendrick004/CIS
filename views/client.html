@@ -30,10 +30,45 @@
         <div id="wrapper">
             <% include ../views/partials/nav.html %>
 
+            <div class="wrapper col-md-11 col-xs-11 col-sm-11 col-lg-11 col-sm-offset-1 col-xs-offset-3 col-md-offset-0" style="background-color:rgba(124,122,122,0.7);margin-top:30px; padding:0;border-radius:5px; max-height:70%">
+                <div class="box-header">
+                    <h3 style="color:#fff">List of Clients</h3>
+                    <button data-target="#client-modal" data-toggle="modal" class="btn bg-teal pull-right" style="margin-bottom:10px;">
+                        <span class="fa fa-plus"></span>&nbsp;&nbsp; Add Client
+                    </button>
+                    <div class="divider"></div>
+                </div>
+                <ul id="style-2" class="client-list" style="padding:0;top:0;max-height:480px; overflow-y:auto;">
+                    <% for(var i=0; i < client.rows.length; i++) { %>
+                        <li id="client-<%= client.rows[i].id %>" class="opportunities col-xs-7 col-sm-7 col-md-4 col-lg-4" style="float:left; margin-bottom:25px;">
+                            <div class="box box-red-orange box-header col-xs-7 col-sm-7 col-md-3 col-lg-3" style="background-color:#fdfffc; margin:0; margin-top:25px;float:left;height:195px;" > 
+                                <button id="<%= client.rows[i].id %>" class="delete-client btn-sm btn-circle btn bg-red pull-right">
+                                    <span class="fa fa-trash-o"></span>
+                                </button>
+                                <button id="<%= client.rows[i].id %>" class="edit-client btn-sm btn-circle btn bg-blue pull-left">
+                                    <span class="fa fa-pencil-square-o"></span>
+                                </button>
+                                <br/><br/>
+                                <div>
+                                    <div class="divider"></div>
+                                    <div class="">
+                                        <h1 id="style-2" style="cursor:pointer;overflow-x:auto; overflow-y:hidden;white-space:nowrap"><b><%= client.rows[i].name %></b></h1>
+                                    </div>
+                                    <div class="box-footer">
+                                        <p class="pull-right"><%= client.rows[i].address %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li><!--Cards-->
+                    <% } %>
+                </ul>
+            </div>
         </div>
 
         <% include ../views/partials/logout_modal.html %>
+        <% include ../views/partials/client_modal.html %>
         <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
 	    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="client.js"></script>
     </body>
 </html>

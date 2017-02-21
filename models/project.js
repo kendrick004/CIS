@@ -2,7 +2,7 @@ var db = require('../functions/mysql_db.js');
 
 exports.getListProject = function(role, user_id, done) {
     var query = "SELECT * FROM project WHERE is_deleted = 0";
-    if(role !== "1") {
+    if(role !== 1) {
         query += " AND (created_by = " + user_id + " OR assigned_to = " + user_id + ")";
     }
     db.get().query(query, function(err, rows, fields) {
