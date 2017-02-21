@@ -1,18 +1,18 @@
 var express = require('express');
 var router = express.Router();
 var user = require('../models/user');
+var pw = require('../functions/password.js');
 
 router.get('/', function(request, response, next) {
     if(request.session.login) {
-        //fetch user data
-                var data = {
-                    page: {
-                        title: "CIS | Profile",
-                        name: "Profile"
-                    },
-                    user: request.session.login,
-                };
-                response.render('profile.html', data);
+        var data = {
+            page: {
+                title: "CIS | Profile",
+                name: "Profile"
+            },
+            user: request.session.login,
+        };
+        response.render('profile.html', data);
     } else {
         response.redirect('login');
     }
@@ -40,7 +40,7 @@ router.post('/update', function(request, response, next) {
                 role: request.body.role,
                 role_name: request.session.login.role_name,
                 role_description: request.session.login.role_description,
-                department: request.session.login.department
+                department: request.body.department
             };
             
             var cb = { success: 1 };
