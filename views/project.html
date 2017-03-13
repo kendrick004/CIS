@@ -5,6 +5,7 @@
 
         <link rel="stylesheet" href="assets/css/style.css"/>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-datetimepicker.css"/>
         <link rel="stylesheet" href="assets/bootstrap/dist/css/AdminLTE.min.css"/>
         <link rel="stylesheet" href="assets/bootstrap/css/ionicons.min.css"/>
         <link rel="stylesheet" href="assets/bootstrap/css/font-awesome.min.css"/>
@@ -23,26 +24,20 @@
 
             <div class="wrapper col-md-11 col-xs-11 col-sm-11 col-lg-11 col-sm-offset-1 col-xs-offset-3 col-md-offset-0" style="background-color:rgba(124,122,122,0.7);margin-top:30px; padding:0;border-radius:5px; max-height:70%">
                 <div class="box-header">
-                    <h3 style="color:#fff">List of Projects from *Client here*</h3>
-                    <button data-target="#add-client" data-toggle="modal" class="btn bg-teal pull-right">
-                        <span class="fa fa-plus"></span>&nbsp;&nbsp; Add Projects
+                    <h3 style="color:#fff">List of Projects</h3>
+                    <button data-target="#new-project-modal" data-toggle="modal" accesskey="n" class="btn bg-teal pull-right" style="margin-bottom:10px;">
+                        <span class="fa fa-plus"></span>&nbsp;&nbsp; Add Project
                     </button>
-                    <select class="selectpicker" data-live-search="true">
-                        <option class="hidden">Search a Project</option>
-                        <option data-tokens="project x">Project X</option>
-                        <option data-tokens="project y">project y</option>
-                        <option data-tokens="sica panget">sica panget</option>
-                    </select>
                     <div class="divider"></div>
                 </div>
-                <ul id="style-2" style="padding:0;top:0;max-height:480px; overflow-y:auto;">
+                <ul id="style-2" class="project-list" style="padding:0;top:0;max-height:480px; overflow-y:auto;">
                     <% for(var i=0; i < project.rows.length; i++) { %>
-                        <li class="opportunities col-xs-7 col-sm-7 col-md-4 col-lg-4" style="float:left; margin-bottom:25px;">
-                            <div class="box box-green box-header col-xs-7 col-sm-7 col-md-3 col-lg-3" style="background-color:#fdfffc; margin:0; margin-top:25px;float:left;height:195px;" > 
-                                <button class="btn-sm btn-circle btn bg-red pull-right">
+                        <li id="project-<%= project.rows[i].id %>" class="opportunities col-xs-7 col-sm-7 col-md-4 col-lg-4" style="float:left; margin-bottom:25px;">
+                            <div class="box box-red-orange box-header col-xs-7 col-sm-7 col-md-3 col-lg-3" style="background-color:#fdfffc; margin:0; margin-top:25px;float:left;height:195px;" >
+                                <button id="<%= project.rows[i].id %>" class="delete-project btn-sm btn-circle btn bg-red pull-right">
                                     <span class="fa fa-trash-o"></span>
                                 </button>
-                                <button data-toggle="modal" data-target="#edit-client" class="btn-sm btn-circle btn bg-blue pull-left">
+                                <button id="<%= project.rows[i].id %>" class="edit-project btn-sm btn-circle btn bg-blue pull-left">
                                     <span class="fa fa-pencil-square-o"></span>
                                 </button>
                                 <br/><br/>
@@ -52,19 +47,29 @@
                                         <h1 id="style-2" style="cursor:pointer;overflow-x:auto; overflow-y:hidden;white-space:nowrap"><b><%= project.rows[i].name %></b></h1>
                                     </div>
                                     <div class="box-footer">
-                                        <p class="pull-right"><b>3</b> &nbsp; Months</p>
+                                        <p class="pull-right"><b>Duration: </b>
+                                        <% if(project.rows[i].duration == null) { %>
+                                            N/A
+                                        <% } else { %>
+                                            <%= moment(project.rows[i].duration).format('MMMM DD, YYYY') %>
+                                        <% } %></p>
                                     </div>
                                 </div>
                             </div>
-                        </li><!--Cards-->
+                        </li>
                     <% } %>
                 </ul>
             </div>
         </div>
 
         <% include ../views/partials/logout_modal.html %>
+        <% include ../views/partials/add_project_modal.html %>
+        <% include ../views/partials/project_modal.html %>
         <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.js"></script>
+	    <script type="text/javascript" src="moment/moment.js"></script>
+        <script src="assets/bootstrap/js/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="project.js"></script>
         <script src="assets/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.js"></script>
         <script src="assets/css/aos.css"></script>
         <script src="assets/js/jquery.easing.1.3.js"></script>

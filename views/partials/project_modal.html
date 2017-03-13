@@ -1,0 +1,412 @@
+<div id="project-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog  animated bounceIn " style="width:70%;">
+        <div class="modal-content">
+            <div class="modal-header bg-aqua">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title">
+                    <input id="project_id" type="hidden"/>
+                    <input id="project_name" size="" maxlength="50" type="text" placeholder="Project name..." style=" font-size:25px;z-index:1;cursor:pointer;border:hidden; background-color:transparent; outline:none; width:100%;"></input>
+                </h5>
+            </div>
+            <div id="style-2" class="modal-body">
+                <div class="row">
+                    <button class="btn btn-link visible-xs-block modal-nav-btn" data-toggle="sidebar" data-target="#modal-sidebar"><i class="glyphicon glyphicon-menu-hamburger"></i></button>
+                    <div id="modal-sidebar sidebar-wrapper" class="hidden-xs col-sm-4 sidebar" style=" margin-top:-20px;border-right:solid thin #83C9F4; height:100%;">
+                        <!--SIDEBAR HERE-->
+                        <div class="row">
+                            <div class="col-md-12 visible-xs-block" style="margin-bottom: 15px;">
+                                <button class="btn btn-link" data-toggle="sidebar" data-target="#modal-sidebar"><i class="glyphicon glyphicon-remove"></i></button>
+                            </div>
+                            <div class="container col-md-12 col-sm-12 col-xs-12" style="margin:0; padding:0;">
+                                <ul class="sidebar-nav modal-sidebar-nav col-md-12 col-sm-12 col-xs-12" style="margin:0; padding:0">
+                                    <div class=" header">
+                                        <h5 style="background-color:#E3EBFF; display:block; padding:20px; margin:0"><span class="fa fa-plus"></span>&nbsp;Add Details</h5>
+                                    </div>
+                                    <li>
+                                        <a data-target="#proj_details" data-toggle="collapse">
+                                            <span class=" pull-right fa fa-chevron-down" style="margin-top:12px; margin-right:10px;"></span>                                            Project Details
+                                        </a>
+                                    </li>
+                                    <div class="collapse" id="proj_details" style=" padding-left:10px;background-color:#f7f7f7">
+                                        <li data-target="#client" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-user"></span>&nbsp; Client
+                                            </a>
+                                        </li>
+                                        <li data-target="#qnx" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-plus"></span>&nbsp; QNX Involve
+                                            </a>
+                                        </li>
+                                        <li data-target="#duration" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-clock-o"></span>&nbsp; Duration
+                                            </a>
+                                        </li>
+                                        <!--<li data-target="#milestone" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-fire"></span>&nbsp; Milestone
+                                            </a>
+                                        </li>-->
+                                        <li data-target="#value_frame" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-diamond"></span>&nbsp; Value Frame
+                                            </a>
+                                        </li>
+                                    </div>
+                                    <li>
+                                        <a data-target="#co_details" data-toggle="collapse">
+                                            <span class=" pull-right fa fa-chevron-down" style="margin-top:12px; margin-right:10px;"></span>                                            People Involved
+                                        </a>
+                                    </li>
+                                    <div class="collapse" id="co_details" style=" padding-left:10px;background-color:#f7f7f7">
+                                        <li data-target="#sales" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-money"></span>&nbsp; Sales
+                                            </a>
+                                        </li>
+                                        <li data-target="#marketing" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-line-chart"></span>&nbsp; Marketing
+                                            </a>
+                                        </li>
+                                        <li data-target="#brand" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-copyright"></span>&nbsp; Brand
+                                            </a>
+                                        </li>
+                                        <li data-target="#finance" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-dollar"></span>&nbsp; Finance
+                                            </a>
+                                        </li>
+                                        <li data-target="#services" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-wrench"></span>&nbsp; Services
+                                            </a>
+                                        </li>
+                                        <li data-target="#software" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-database"></span>&nbsp; Software
+                                            </a>
+                                        </li>
+                                        <li data-target="#hardware" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-cogs"></span>&nbsp; Hardware
+                                            </a>
+                                        </li>
+                                        <li data-target="#maintenance" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-hand-stop-o"></span>&nbsp; Maintenance
+                                            </a>
+                                        </li>
+                                        <li data-target="#executive" data-toggle="collapse">
+                                            <a>
+                                                <span class="fa fa-rocket"></span>&nbsp; Executive
+                                            </a>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--BAWAL MAWALA-->
+                    </div>
+                    <!--END OF SIDEBAR-->
+                    <!--CONTENT HERE-->
+                    <div class="col-md-8" style="border-left:solid thin #83C9F4; margin-left:-1px;">
+                        <!--Project Details-->
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="client">
+                            <div class="header">Client</div>
+                            <div class="divider"></div>
+                            <!--Add QNX members-->
+                            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom:15px;">
+                                <!--//Every time the  Add button is pressed a text box is added-->
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2">
+                                    <select id="text_client" name="assigned.id" class="form-control select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <% for(var i=0; i < clients.rows.length; i++) { %>
+                                            <option value="<%= clients.rows[i].id %>"><%= clients.rows[i].name %></option>
+                                        <% } %>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--QNX involved-->
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="qnx">
+                            <div class="header">QNX Involved</div>
+                            <div class="divider"></div>
+                            <!--Add QNX members-->
+                            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom:15px;">
+                                <!--//Every time the  Add button is pressed a text box is added-->
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2">
+                                    <select id="text_qnx" name="assigned.id" class="form-control select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <% for(var i=0; i < users.rows.length; i++) { %>
+                                            <option value="<%= users.rows[i].id %>"><%= users.rows[i].name %></option>
+                                        <% } %>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Duration-->
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="duration">
+                            <div class="header">Duration</div>
+                            <div class="divider"></div>
+                            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom:15px;">
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2">
+                                    <div class="input-group date" id="datetimepicker_duration">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-fw fa-calendar"></i>
+                                        </div>
+                                        <input id="text_duration" name="duration" class="form-control pull-right" type="text" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="col-sm-12 col-md-12 col-xs-12 collapse" id="milestone">
+                            <div class="header">Milestone(s)</div>
+                            <div class="divider"></div>
+                            <div class="pull-right" style="margin-bottom:10px;">
+                                <span style="font-size:12px; color:red; font-style:italic;">* Added empty fields will be ignored.</span>
+                            </div>
+                            <input type="hidden" id="mi_new_counter" value="0"/>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="milestone_list">
+                            </div>
+                            <div class="col-md-12 col-xs-12 col-sm-12 text-center">
+                                 <button id="mi_add" class="btn bg-olive">Add Milestone</button>
+                            </div>
+                        </div>-->
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="value_frame">
+                            <div class="header">Valueframe(s)</div>
+                            <div class="divider"></div>
+                            <input type="hidden" id="vf_new_counter" value="0"/>
+                            <div class="col-md-12 col-xs-12 col-sm-12">
+                                <table id="vf_table" class="table table-bordered" style="text-align:left;">
+                                    <thead>
+                                        <tr>
+                                            <th style="display:none;">ID</th>
+                                            <th style="width:60%">Valueframe Description</th>
+                                            <th style="width:30%">Completion Date</th>
+                                            <th style="width:10%">Done</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="value_frame_list">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-12 col-xs-12 col-sm-12 text-center">
+                                 <button id="vf_add" class="btn bg-olive">Add Valueframe</button>
+                            </div>
+                        </div>
+                        <!--/Duration-->
+                        <!--Milestone-->
+                        <!--<div class="col-sm-12 col-md-12 col-xs-12 collapse" id="milestone">
+                            <div class="header">Milestone(s)</div>
+                            <div class="divider"></div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom:15px; border-bottom: 2px solid deepskyblue;">
+                                <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom:15px; border-bottom: 1px solid deepskyblue;">
+                                    <label for="address" class="control-label col-md-2">
+                                        Milestone Description
+                                    </label>
+                                    <div class="col-md-10 col-sm-10 col-xs-10 col-sm-10 col-xs-10" style="margin-top:3px;">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-edit"></i></span>
+                                            <input type="text" id="address" class="form-control" tabindex="-1" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-xs-12 col-sm-12 " style="margin-bottom:15px; border-bottom: 2px solid aquamarine;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom:15px;">
+                                        <label for="address" class="control-label col-md-2">
+                                            Valueframe Description
+                                        </label>
+                                        <div class="col-md-10 col-sm-10 col-xs-10 col-sm-10 col-xs-10" style="margin-top:3px;">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-fw fa-edit"></i></span>
+                                                <input type="text" id="address" class="form-control" tabindex="-1" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-sm-8 col-xs-8" style="margin-bottom:15px;">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 col-sm-12 col-xs-12">
+                                            <div class="input-group date" id="datetimepicker_completion">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-fw fa-calendar"></i>
+                                                </div>
+                                                <input id="text_completion" name="text_completion" class="form-control pull-right" type="text" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 col-sm-12 col-xs-12">
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="">Done</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom:15px;">
+                                    <button class="btn bg-aqua center-block">Add New Valueframe</button>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom:15px;">
+                                <button class="btn bg-aqua center-block">Add New Milestone</button>
+                            </div>
+                        </div>-->
+                        <!--End of Milestone collapse-->
+                        <!--Valueframe-->
+                        <!--<div class="col-sm-12 col-md-12 col-xs-12 collapse" id="value_frame">
+                            <div class="header">Valueframe(s)</div>
+                            <div class="divider"></div>
+                            <div id="value_frame_list" class="col-md-12 col-xs-12 col-sm-12 " style="margin-bottom:15px;">
+                                <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom:15px;">
+                                    <label for="address" class="control-label col-md-2">
+                                        Valueframe Description
+                                    </label>
+                                    <input type="hidden" class="v_id" id="v_id"/>
+                                    <div class="col-md-10 col-sm-10 col-xs-10 col-sm-10 col-xs-10" style="margin-top:3px;">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-edit"></i></span>
+                                            <input type="text" id="v_description" class="v_description form-control" tabindex="-1" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom:15px; border-bottom: 2px solid aquamarine;">
+                                    <div class="col-md-8 col-sm-8 col-xs-8" style="margin-bottom:15px;">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 col-sm-12 col-xs-12">
+                                            <div class="input-group date" id="datetimepicker_completion">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-fw fa-calendar"></i>
+                                                </div>
+                                                <input id="v_completion" name="v_completion" class="v_completion form-control pull-right" type="text" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 col-sm-12 col-xs-12">
+                                            <div class="checkbox">
+                                                <label><input id="v_done" class="v_done" type="checkbox" value="">Done</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom:15px;">
+                                <button class="btn bg-aqua center-block">Add New Valueframe</button>
+                            </div>
+                        </div>-->
+                        <!--End of valueframe collapse-->
+                        <!--Sales-->
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="sales">
+                            <div class="header">Sales</div>
+                            <div class="divider"></div>
+                            <!--Add Sales-->
+                            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom:15px;">
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2">
+                                    <input id="text_sales" type="text" placeholder="Add Sales..." class="form-control" tabindex="-1" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of sales-->
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="marketing">
+                            <div class="header">Marketing</div>
+                            <div class="divider"></div>
+                            <!--Add marketing-->
+                            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom:15px;">
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2">
+                                    <input id="text_marketing" type="text" placeholder="Add a Marketing..." class="form-control" tabindex="-1" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of Marketing-->
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="brand">
+                            <div class="header">Brand</div>
+                            <div class="divider"></div>
+                            <!--Add Brand-->
+                            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom:15px;">
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2">
+                                    <input id="text_brand" type="text" placeholder="Add a Brand Manager..." class="form-control" tabindex="-1" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of brand-->
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="finance">
+                            <div class="header">Finance</div>
+                            <div class="divider"></div>
+                            <!--Add Finance-->
+                            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom:15px;">
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2">
+                                    <input id="text_finance" type="text" placeholder="Add a Finance Manager..." class="form-control" tabindex="-1" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of Finance-->
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="services">
+                            <div class="header">Service</div>
+                            <div class="divider"></div>
+                            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom:15px;">
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2">
+                                    <input id="text_service" type="text" placeholder="Add a Service Officer..." class="form-control" tabindex="-1" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="software">
+                            <div class="header">Software</div>
+                            <div class="divider"></div>
+                            <!--Add software-->
+                            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom:15px;">
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2">
+                                    <input id="text_software" type="text" placeholder="Add Software..." class="form-control" tabindex="-1" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of software-->
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="hardware">
+                            <div class="header">Hardware</div>
+                            <div class="divider"></div>
+                            <!--Add hardware-->
+                            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom:15px;">
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2">
+                                    <input id="text_hardware" type="text" placeholder="Add Hardware..." class="form-control" tabindex="-1" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of hardware-->
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="maintenance">
+                            <div class="header">Maintenance</div>
+                            <div class="divider"></div>
+                            <!--Add maintenance-->
+                            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom:15px;">
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2">
+                                    <input id="text_maintenance" type="text" placeholder="Add Maintenance..." class="form-control" tabindex="-1" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of maintenance-->
+                        <div class="col-sm-12 col-md-12 col-xs-12 collapse" id="executive">
+                            <div class="header">Executive</div>
+                            <div class="divider"></div>
+                            <!--Add executive-->
+                            <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2">
+                                <div class="col-md-12 col-xs-12 col-sm-12">
+                                    <input id="text_executive" type="text" placeholder="Add Executive..." class="form-control" tabindex="-1" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of executive-->
+                    </div>
+                    <!--End of content-->
+                </div>
+                <!--Don't go Beyond this End div-->
+            </div>
+            <!--Trust me bro it's dangerous-->
+            <!--MODAL FOOTER-->
+            <div class="modal-footer bg-gray-light">
+                <button class="btn btn-default" data-dismiss="modal"> Cancel </button>
+                <button class="btn bg-olive" id="save"> Save </button>
+            </div>
+            <!--/MODAL FOOTER-->
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
